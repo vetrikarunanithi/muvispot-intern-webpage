@@ -1,0 +1,1556 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MuviSpot Internship Program - Digital Media Careers</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI",
+          sans-serif;
+        line-height: 1.6;
+        color: #2d3748;
+        background: #ffffff;
+      }
+
+      /* Typography */
+      h1 {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      h2 {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 600;
+        line-height: 1.3;
+      }
+      h3 {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 600;
+        line-height: 1.4;
+      }
+      h4 {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-weight: 600;
+      }
+      p {
+        font-size: clamp(0.95rem, 2vw, 1.05rem);
+        line-height: 1.7;
+        color: #4a5568;
+      }
+
+      /* Container */
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      @media (min-width: 768px) {
+        .container {
+          padding: 0 40px;
+        }
+      }
+
+      /* Header */
+      header {
+        background: #ffffff;
+        border-bottom: 1px solid #e2e8f0;
+        padding: 20px 0;
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+      }
+
+      .header-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .logo {
+        font-size: clamp(1.25rem, 3vw, 1.75rem);
+        font-weight: 700;
+        color: #1a202c;
+      }
+
+      .cta-header {
+        background: #2b6cb0;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        font-size: clamp(0.85rem, 2vw, 0.95rem);
+        text-decoration: none;
+        display: inline-block;
+        transition: background 0.3s;
+      }
+
+      .cta-header:hover {
+        background: #2c5282;
+      }
+
+      /* Hero Section */
+      .hero {
+        background: linear-gradient(
+            rgba(26, 32, 44, 0.7),
+            rgba(26, 32, 44, 0.7)
+          ),
+          url("https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1600&q=80");
+        background-size: cover;
+        background-position: center;
+        color: white;
+        padding: 120px 0;
+        text-align: center;
+      }
+
+      @media (max-width: 768px) {
+        .hero {
+          padding: 80px 0;
+        }
+      }
+
+      .hero h1 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .hero-subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        color: #e2e8f0;
+        margin-bottom: 40px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-buttons {
+        display: flex;
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .btn {
+        padding: 14px 32px;
+        border-radius: 4px;
+        font-weight: 500;
+        cursor: pointer;
+        border: none;
+        font-size: clamp(0.9rem, 2vw, 1rem);
+        text-decoration: none;
+        display: inline-block;
+        transition: all 0.3s;
+      }
+
+      .btn-primary {
+        background: #2b6cb0;
+        color: white;
+      }
+
+      .btn-primary:hover {
+        background: #2c5282;
+      }
+
+      .btn-secondary {
+        background: transparent;
+        color: white;
+        border: 2px solid white;
+      }
+
+      .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+
+      /* Section Spacing */
+      section {
+        padding: 80px 0;
+      }
+
+      @media (max-width: 768px) {
+        section {
+          padding: 50px 0;
+        }
+      }
+
+      .section-header {
+        text-align: center;
+        margin-bottom: 60px;
+      }
+
+      .section-header h2 {
+        margin-bottom: 15px;
+      }
+
+      .section-header p {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+
+      /* About Section */
+      .about {
+        background: #f7fafc;
+      }
+
+      .about-content {
+        max-width: 900px;
+        margin: 0 auto 50px;
+        text-align: center;
+      }
+
+      .about-image {
+        width: 100%;
+        height: 400px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin: 50px 0 30px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .icon-row {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 50px;
+      }
+
+      .icon-item {
+        text-align: center;
+      }
+
+      .icon-circle {
+        width: 80px;
+        height: 80px;
+        background: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 15px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      }
+
+      .icon-circle svg {
+        width: 35px;
+        height: 35px;
+        stroke: #2b6cb0;
+      }
+
+      /* Benefits Section */
+      .benefits-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+      }
+
+      .benefit-card {
+        background: white;
+        padding: 30px;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+        border: 1px solid #e2e8f0;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+      }
+
+      .benefit-card svg {
+        width: 40px;
+        height: 40px;
+        stroke: #2b6cb0;
+        margin-bottom: 15px;
+      }
+
+      .benefit-card h4 {
+        margin-bottom: 10px;
+      }
+
+      .benefit-card p {
+        font-size: 0.95rem;
+      }
+
+      /* Image Grid */
+      .image-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+      }
+
+      .image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 300px;
+      }
+
+      .image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+      }
+
+      .image-card:hover img {
+        transform: scale(1.05);
+      }
+
+      .image-caption {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.8), transparent);
+        color: white;
+        padding: 30px 20px 20px;
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      /* Departments Section */
+      .departments {
+        background: #f7fafc;
+      }
+
+      .dept-image-banner {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-bottom: 60px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      .dept-grid {
+        display: grid;
+        gap: 25px;
+      }
+
+      .dept-card {
+        background: white;
+        border: 1px solid #e2e8f0;
+        border-radius: 4px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+      }
+
+      .dept-card:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+      }
+
+      .dept-header {
+        background: #1a202c;
+        color: white;
+        padding: 25px 30px;
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        cursor: pointer;
+      }
+
+      .dept-header svg {
+        width: 30px;
+        height: 30px;
+        stroke: #2b6cb0;
+        flex-shrink: 0;
+      }
+
+      .dept-title h3 {
+        color: white;
+        margin-bottom: 5px;
+      }
+
+      .dept-subtitle {
+        font-size: 0.9rem;
+        color: #cbd5e0;
+      }
+
+      .dept-content {
+        padding: 30px;
+        display: none;
+      }
+
+      .dept-content.active {
+        display: block;
+      }
+
+      .role-item {
+        padding: 20px 0;
+        border-bottom: 1px solid #e2e8f0;
+      }
+
+      .role-item:last-child {
+        border-bottom: none;
+      }
+
+      .role-name {
+        font-weight: 600;
+        color: #1a202c;
+        margin-bottom: 8px;
+        font-size: 1.05rem;
+      }
+
+      .role-desc {
+        color: #4a5568;
+        font-size: 0.95rem;
+      }
+
+      /* Structure Section */
+      .structure-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .structure-item {
+        display: flex;
+        gap: 15px;
+      }
+
+      .structure-item svg {
+        width: 30px;
+        height: 30px;
+        stroke: #2b6cb0;
+        flex-shrink: 0;
+      }
+
+      .structure-text h4 {
+        margin-bottom: 5px;
+      }
+
+      .structure-text p {
+        font-size: 0.9rem;
+      }
+
+      .structure-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 50px;
+      }
+
+      .structure-image-card {
+        position: relative;
+        overflow: hidden;
+        border-radius: 8px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        height: 280px;
+      }
+
+      .structure-image-card img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      /* Responsibilities Section */
+      .responsibilities-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+      }
+
+      .resp-item {
+        background: white;
+        padding: 25px;
+        border-left: 4px solid #2b6cb0;
+        border-radius: 4px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+
+      .resp-item h4 {
+        margin-bottom: 10px;
+        color: #1a202c;
+      }
+
+      .resp-item p {
+        font-size: 0.9rem;
+      }
+
+      .responsibilities-image {
+        width: 100%;
+        height: 350px;
+        object-fit: cover;
+        border-radius: 8px;
+        margin-top: 50px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Trust Section */
+      .trust {
+        background: #edf2f7;
+        border: 2px solid #2b6cb0;
+        border-radius: 4px;
+        padding: 40px;
+        margin: 80px 0;
+      }
+
+      .trust h3 {
+        text-align: center;
+        margin-bottom: 30px;
+        color: #1a202c;
+      }
+
+      .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 25px;
+      }
+
+      .trust-item {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+      }
+
+      .trust-item svg {
+        width: 28px;
+        height: 28px;
+        stroke: #2b6cb0;
+        flex-shrink: 0;
+      }
+
+      .trust-item p {
+        font-size: 0.95rem;
+      }
+
+      /* Application Section */
+      .application {
+        background: #1a202c;
+        color: white;
+        text-align: center;
+      }
+
+      .application h2 {
+        color: white;
+        margin-bottom: 20px;
+      }
+
+      .application p {
+        color: #cbd5e0;
+        margin-bottom: 30px;
+      }
+
+      /* Footer */
+      footer {
+        background: #1a202c;
+        color: #cbd5e0;
+        padding: 50px 0 30px;
+      }
+
+      .footer-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 40px;
+        margin-bottom: 40px;
+      }
+
+      .footer-section h4 {
+        color: white;
+        margin-bottom: 15px;
+      }
+
+      .footer-section a {
+        color: #cbd5e0;
+        text-decoration: none;
+        display: block;
+        margin-bottom: 10px;
+        font-size: 0.95rem;
+        transition: color 0.3s;
+      }
+
+      .footer-section a:hover {
+        color: #2b6cb0;
+      }
+
+      .social-icons {
+        display: flex;
+        gap: 15px;
+        margin-top: 15px;
+      }
+
+      .social-icons svg {
+        width: 24px;
+        height: 24px;
+        stroke: #cbd5e0;
+        cursor: pointer;
+        transition: stroke 0.3s;
+      }
+
+      .social-icons svg:hover {
+        stroke: #2b6cb0;
+      }
+
+      .footer-bottom {
+        text-align: center;
+        padding-top: 30px;
+        border-top: 1px solid #2d3748;
+        font-size: 0.9rem;
+      }
+      .logo-img {
+        height: 45px;
+        width: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="container">
+        <div class="header-content">
+          <div class="logo">
+            <img
+              src="images/ms-logo-1.png"
+              alt="MuviSpot Logo"
+              class="logo-img"
+            />
+          </div>
+
+          <a href="#apply" class="cta-header">Apply Now</a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <h1>MuviSpot Internship Program</h1>
+        <p class="hero-subtitle">
+          Start your journey in digital media. Learn, contribute, and grow with
+          a real entertainment newsroom.
+        </p>
+        <div class="hero-buttons">
+          <a href="#apply" class="btn btn-primary">Apply Now</a>
+          <a href="#departments" class="btn btn-secondary">Explore Roles</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+      <div class="container">
+        <div class="about-content">
+          <h2>About MuviSpot</h2>
+          <p>
+            MuviSpot is a digital entertainment media brand delivering accurate
+            cinema updates, curated insights, and professional storytelling
+            across platforms. Our internship program offers hands-on exposure to
+            real-time digital media workflows, industry trends, and
+            collaborative newsroom environments.
+          </p>
+        </div>
+
+        <img
+          src="images/team-img.jpg"
+          alt="Professional team collaboration"
+          class="about-image"
+        />
+
+        <div class="icon-row">
+          <div class="icon-item">
+            <div class="icon-circle">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4>Accuracy</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-.62-9-1.745M16 6V4a2 2 0 00-2-2h-4a2 2 0 00-2 2v2m4 6h.01M5 20h14a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                />
+              </svg>
+            </div>
+            <h4>Professionalism</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
+                />
+              </svg>
+            </div>
+            <h4>Real-World Exposure</h4>
+          </div>
+          <div class="icon-item">
+            <div class="icon-circle">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"
+                />
+              </svg>
+            </div>
+            <h4>Growth Opportunities</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section class="benefits">
+      <div class="container">
+        <div class="section-header">
+          <h2>Why Intern with Us?</h2>
+          <p>
+            Experience professional growth in a dynamic digital media
+            environment
+          </p>
+        </div>
+
+        <div class="benefits-grid">
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+              />
+            </svg>
+            <h4>Real-Time Industry Exposure</h4>
+            <p>
+              Work on live projects and experience the fast-paced world of
+              digital entertainment media.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"
+              />
+            </svg>
+            <h4>Professional Skill Development</h4>
+            <p>
+              Build tangible skills in content creation, media production,
+              research, and digital operations.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"
+              />
+            </svg>
+            <h4>Collaborative Digital Newsroom</h4>
+            <p>
+              Join a team-driven environment where collaboration and creativity
+              drive success.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"
+              />
+            </svg>
+            <h4>Certification & Performance Credits</h4>
+            <p>
+              Receive official certification and performance-based letters of
+              recommendation.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <h4>Flexible Shift-Based Contribution</h4>
+            <p>
+              Choose from morning, afternoon, or evening shifts to match your
+              schedule.
+            </p>
+          </div>
+
+          <div class="benefit-card">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"
+              />
+            </svg>
+            <h4>Structured Multi-Department Experience</h4>
+            <p>
+              Gain exposure across various media departments for comprehensive
+              industry understanding.
+            </p>
+          </div>
+        </div>
+
+        <div class="image-grid">
+          <div class="image-card">
+            <img
+              src="images/remote-colab.jpg"
+              alt="Collaborative newsroom environment"
+            />
+            <div class="image-caption">Active digital collaboration</div>
+          </div>
+          <div class="image-card">
+            <img
+              src="images/remote-skill.jpg"
+              alt="Structured skill development"
+            />
+            <div class="image-caption">Remote skill development</div>
+          </div>
+          <div class="image-card">
+            <img
+              src="images/remote-content.jpg"
+              alt="Real-time media production"
+            />
+            <div class="image-caption">
+              Real-time media production workspace
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Departments Section -->
+    <section class="departments" id="departments">
+      <div class="container">
+        <div class="section-header">
+          <h2>Departments & Domains</h2>
+          <p>
+            Explore diverse opportunities across our digital media operations
+          </p>
+        </div>
+
+        <img
+          src="images/domain-img.jpg"
+          alt="Diverse team in modern office"
+          class="dept-image-banner"
+        />
+
+        <div class="dept-grid">
+          <!-- Department 1 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Management & Coordination Department</h3>
+                <div class="dept-subtitle">
+                  Strategic operations and team leadership
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Team Coordinator Intern</div>
+                <div class="role-desc">
+                  Oversees daily workflow and ensures smooth inter-department
+                  communication.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">HR & Operations Intern</div>
+                <div class="role-desc">
+                  Handles onboarding, documentation, and intern support
+                  processes.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Project Manager Intern</div>
+                <div class="role-desc">
+                  Supervises multi-team execution and ensures alignment with
+                  weekly content objectives.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Quality Control Intern</div>
+                <div class="role-desc">
+                  Reviews outputs to maintain brand consistency and quality
+                  standards.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department 2 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Research & Industry Insights Department</h3>
+                <div class="dept-subtitle">
+                  Data-driven entertainment intelligence
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Industry Research Intern</div>
+                <div class="role-desc">
+                  Collects verified entertainment data and supports content
+                  teams with accurate insights.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Fact-Checking Intern</div>
+                <div class="role-desc">
+                  Ensures factual correctness and editorial accuracy across all
+                  departments.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department 3 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Social Media & Community Department</h3>
+                <div class="dept-subtitle">
+                  Digital engagement and audience growth
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Social Media Manager Intern</div>
+                <div class="role-desc">
+                  Handles consistent platform updates and brand communication.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Trend Analyst Intern</div>
+                <div class="role-desc">
+                  Tracks entertainment trends and emerging online topics.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Analytics & Insights Intern</div>
+                <div class="role-desc">
+                  Monitors performance metrics and prepares growth reports.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department 4 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Video & Media Production Department</h3>
+                <div class="dept-subtitle">
+                  Visual storytelling and content creation
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Short-Form Video Editor</div>
+                <div class="role-desc">
+                  Edits high-quality reels and short video content.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Long-Form Video Editor</div>
+                <div class="role-desc">
+                  Produces structured YouTube-ready video edits.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Voiceover Artist</div>
+                <div class="role-desc">
+                  Delivers professional narration for video content.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">
+                  Video Research & Script Support Intern
+                </div>
+                <div class="role-desc">
+                  Prepares structured research and script foundations.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department 5 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Creative & Design Department</h3>
+                <div class="dept-subtitle">
+                  Visual identity and brand aesthetics
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Graphic Designer</div>
+                <div class="role-desc">
+                  Produces brand-aligned digital creatives.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Thumbnail Designer</div>
+                <div class="role-desc">
+                  Designs impactful thumbnails optimized for visibility and
+                  engagement.
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Department 6 -->
+          <div class="dept-card">
+            <div class="dept-header" onclick="toggleDept(this)">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z"
+                />
+              </svg>
+              <div class="dept-title">
+                <h3>Content & Editorial Department</h3>
+                <div class="dept-subtitle">
+                  Written content and editorial excellence
+                </div>
+              </div>
+            </div>
+            <div class="dept-content">
+              <div class="role-item">
+                <div class="role-name">Content Writer – News & Updates</div>
+                <div class="role-desc">
+                  Writes timely, accurate entertainment updates.
+                </div>
+              </div>
+              <div class="role-item">
+                <div class="role-name">Editorial Proofreader</div>
+                <div class="role-desc">
+                  Reviews written material for clarity, correctness, and tone
+                  consistency.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Structure Section -->
+    <section class="structure">
+      <div class="container">
+        <div class="section-header">
+          <h2>Internship Structure</h2>
+          <p>Flexible, professional, and designed for your growth</p>
+        </div>
+
+        <div class="structure-grid">
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>Duration Options</h4>
+              <p>
+                Choose from 1, 3, or 6-month internship programs based on your
+                availability and goals.
+              </p>
+            </div>
+          </div>
+
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>Flexible Shifts</h4>
+              <p>
+                Select morning, afternoon, or evening shifts that align with
+                your schedule.
+              </p>
+            </div>
+          </div>
+
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>Weekly Off</h4>
+              <p>
+                Sundays off with rotational weekday options to ensure work-life
+                balance.
+              </p>
+            </div>
+          </div>
+
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>No Fees or Payments</h4>
+              <p>
+                This is a learning opportunity with no financial obligation or
+                stipend involved.
+              </p>
+            </div>
+          </div>
+
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>Certification</h4>
+              <p>
+                Receive an official completion certificate upon successful
+                program fulfillment.
+              </p>
+            </div>
+          </div>
+
+          <div class="structure-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"
+              />
+            </svg>
+            <div class="structure-text">
+              <h4>Performance-Based LOR</h4>
+              <p>
+                High-performing interns receive letters of recommendation for
+                future opportunities.
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <div class="structure-images">
+          <div class="structure-image-card">
+            <img
+              src="https://images.unsplash.com/photo-1497215728101-856f4ea42174?w=800&q=80"
+              alt="Modern digital workspace"
+            />
+            <div class="image-caption">Modern digital workspace</div>
+          </div>
+          <div class="structure-image-card">
+            <img
+              src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=800&q=80"
+              alt="Flexible collaboration hours"
+            />
+            <div class="image-caption">Flexible collaboration hours</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Responsibilities Section -->
+    <section class="responsibilities">
+      <div class="container">
+        <div class="section-header">
+          <h2>Responsibilities & Expectations</h2>
+          <p>Professional standards we uphold together</p>
+        </div>
+
+        <div class="responsibilities-grid">
+          <div class="resp-item">
+            <h4>Confidentiality</h4>
+            <p>
+              Maintain strict confidentiality of all internal processes,
+              strategies, and unpublished content.
+            </p>
+          </div>
+
+          <div class="resp-item">
+            <h4>Timely Communication</h4>
+            <p>
+              Respond promptly to team communications and meet assigned
+              deadlines consistently.
+            </p>
+          </div>
+
+          <div class="resp-item">
+            <h4>Quality Standards</h4>
+            <p>
+              Deliver work that meets MuviSpot's editorial and creative quality
+              benchmarks.
+            </p>
+          </div>
+
+          <div class="resp-item">
+            <h4>Ethical Conduct</h4>
+            <p>
+              Uphold professional integrity, respect team members, and maintain
+              ethical work practices.
+            </p>
+          </div>
+
+          <div class="resp-item">
+            <h4>Accurate Information Handling</h4>
+            <p>
+              Verify all information before publication and maintain factual
+              accuracy in all work.
+            </p>
+          </div>
+
+          <div class="resp-item">
+            <h4>Team Workflow Compliance</h4>
+            <p>
+              Follow established processes, use designated tools, and
+              collaborate effectively with all departments.
+            </p>
+          </div>
+        </div>
+
+        <img
+          src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=1200&q=80"
+          alt="Professional team meeting"
+          class="responsibilities-image"
+        />
+      </div>
+    </section>
+
+    <!-- Trust Section -->
+    <div class="container">
+      <div class="trust">
+        <h3>Trust & Transparency</h3>
+        <div class="trust-grid">
+          <div class="trust-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <p>
+              <strong>No Fees, No Hidden Charges:</strong> MuviSpot does not
+              request payment for internships under any circumstances.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
+              />
+            </svg>
+            <p>
+              <strong>Official Communication Only:</strong> All correspondence
+              happens exclusively through verified MuviSpot channels.
+            </p>
+          </div>
+
+          <div class="trust-item">
+            <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"
+              />
+            </svg>
+            <p>
+              <strong>Data Privacy Protected:</strong> We do not share intern
+              information with any third party without explicit consent.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Application Section -->
+    <section class="application" id="apply">
+      <div class="container">
+        <h2>Ready to Join MuviSpot?</h2>
+        <p>
+          Submit your application and take the first step toward your digital
+          media career.
+        </p>
+        <a
+          href="https://forms.gle/dDFAYHC39fV959129"
+          class="btn btn-primary"
+          target="_blank"
+          >Apply Now</a
+        >
+        <p style="margin-top: 20px; font-size: 0.9rem">
+          Required: Resume, portfolio links (if applicable), and a brief
+          introduction
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-section">
+            <h4>MuviSpot</h4>
+            <p>
+              Digital entertainment media brand delivering accurate cinema
+              updates and professional storytelling.
+            </p>
+            <div class="social-icons">
+              <!-- Instagram -->
+              <a
+                href="https://www.instagram.com/muvispot/"
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                  <path d="M16 11.37A4 4 0 1 1 12.63 8"></path>
+                  <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+              </a>
+
+              <!-- X / Twitter -->
+              <a
+                href="https://twitter.com/muvispot"
+                target="_blank"
+                aria-label="Twitter"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path d="M4 4L20 20M20 4L4 20"></path>
+                </svg>
+              </a>
+
+              <!-- LinkedIn -->
+              <a
+                href="https://linkedin.com/company/muvispot"
+                target="_blank"
+                aria-label="LinkedIn"
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-4 0v7h-4v-7a6 6 0 0 1 6-6z"
+                  ></path>
+                  <rect x="2" y="9" width="4" height="12"></rect>
+                  <circle cx="4" cy="4" r="2"></circle>
+                </svg>
+              </a>
+            </div>
+          </div>
+
+          <div class="footer-section">
+            <h4>Quick Links</h4>
+            <a href="#departments">Explore Roles</a>
+            <a href="#apply">Apply Now</a>
+            <a href="#about">About MuviSpot</a>
+            <a
+              href="https://drive.google.com/file/d/1LHXDe5tJSUnFIyKE-h7eNLEb4YN4Z16M/view?usp=sharing"
+              target="_blank"
+              >Internship Policy</a
+            >
+          </div>
+
+          <div class="footer-section">
+            <h4>Resources</h4>
+            <a
+              href="https://drive.google.com/file/d/1qfWclkgPTwWYEy4EfyNDClv7o6rhNQS8/view?usp=sharing"
+              target="_blank"
+              >Application Guidelines</a
+            >
+            <a
+              href="https://drive.google.com/file/d/1LHXDe5tJSUnFIyKE-h7eNLEb4YN4Z16M/view?usp=sharing"
+              target="_blank"
+              >Terms & Conditions</a
+            >
+          </div>
+
+          <div class="footer-section">
+            <h4>Contact</h4>
+            <a href="mailto:muvispot.support@gmail.com"
+              >muvispot.support@gmail.com</a
+            >
+            <p style="margin-top: 15px; font-size: 0.9rem">
+              For internship inquiries only. Please allow 3-5 business days for
+              response.
+            </p>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>
+            &copy; 2025 MuviSpot. All rights reserved. | Digital Entertainment
+            Media Brand
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function toggleDept(header) {
+        const content = header.nextElementSibling;
+        const allContents = document.querySelectorAll(".dept-content");
+
+        allContents.forEach((c) => {
+          if (c !== content) {
+            c.classList.remove("active");
+          }
+        });
+
+        content.classList.toggle("active");
+      }
+
+      // Smooth scrolling for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute("href"));
+          if (target) {
+            target.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
